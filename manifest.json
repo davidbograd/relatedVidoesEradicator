@@ -1,0 +1,34 @@
+{
+  "name": "Page action by URL",
+  "version": "0.0.1",
+  "description": "Shows a page action for 'youtube.com/watch' urls.",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action" :
+  {
+    "default_icon" : "icon-19.png",
+    "default_title" : "This is a youtube.com/watch URL"
+  },
+  "permissions" : [
+    "declarativeContent",
+    "storage",
+    "http://www.youtube.com/watch*",
+    "https://www.youtube.com/watch*"
+  ],
+  "icons" : {
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
+  },
+  "manifest_version": 2,
+
+"content_scripts": [
+  {
+    "matches": ["http://www.youtube.com/watch*", "https://www.youtube.com/watch*"],
+    "js": ["eradicate.js"],
+    "css": ["eradicate.css"],
+    "run_at": "document_idle"
+  }
+]
+}
