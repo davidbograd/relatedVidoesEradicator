@@ -11,6 +11,7 @@ setInterval(function(){
   }
 }, 1000);
 
+
 // var eradicateRetry = setInterval(function(){
 // 		if ( ! isEnabled() ) {
 // 			return;
